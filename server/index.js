@@ -15,8 +15,7 @@ app.use('/api/posts' , posts);
 //handle production
 
 if (process.env.NODE_ENV === 'production') {
-	//static folder
-	app.use(express.static(__dirname + '/public/'));
+	
 	//handle SPA
 	app.get(/.*/ , (req , res) => res.sendFile(__dirname + '/public/index.html'));
 }
